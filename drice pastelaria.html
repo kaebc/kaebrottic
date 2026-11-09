@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>drice pastelaria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#F7B81C; --ink:#2B1B12; --red:#D7263D; --paper:#FFFFFF; --paper2:#FFF3CF; --muted:#6B5444; --line:#2B1B12;
+  --on-red:#FFFFFF;
+  --display:'Bagel Fat One','Arial Rounded MT Bold','Trebuchet MS',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--gold:#F7B81C;--ink:#FFF1CC;--paper:#241912;--paper2:#33241A;--muted:#CDB89A;--line:#FFF1CC;--red:#EF4B5F}
+}
+:root[data-theme="dark"]{--gold:#F7B81C;--ink:#FFF1CC;--paper:#241912;--paper2:#33241A;--muted:#CDB89A;--line:#FFF1CC;--red:#EF4B5F}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+.awning{height:44px;background:repeating-linear-gradient(90deg,var(--red) 0 44px,#FFFFFF 44px 88px);
+  border-bottom:6px solid var(--ink);position:relative}
+.awning::after{content:"";position:absolute;left:0;right:0;top:100%;height:18px;
+  background:radial-gradient(circle at 22px 0,var(--red) 21px,transparent 22px) 0 0/88px 18px repeat-x,
+             radial-gradient(circle at 66px 0,#FFFFFF 21px,transparent 22px) 0 0/88px 18px repeat-x;
+  filter:drop-shadow(0 2px 0 var(--ink))}
+
+.hero{background:var(--gold);color:#2B1B12;padding:64px 24px 72px}
+.wrap{max-width:960px;margin:0 auto}
+.hero h1{font-family:var(--display);font-weight:400;font-size:clamp(88px,22vw,220px);line-height:.85;margin:0;letter-spacing:-.02em}
+.hero p{font-size:clamp(20px,3.2vw,28px);max-width:22em;margin:20px 0 28px;font-weight:500}
+.btn{display:inline-block;background:#2B1B12;color:#FFF1CC;padding:14px 26px;border-radius:999px;text-decoration:none;font-weight:700}
+.btn:hover{background:var(--red);color:#fff}
+
+nav{background:var(--paper2);border-bottom:2px solid var(--line)}
+nav .wrap{display:flex;gap:6px;overflow-x:auto;padding:12px 24px}
+nav a{white-space:nowrap;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:999px;border:2px solid var(--line)}
+nav a:hover{background:var(--ink);color:var(--paper)}
+
+main{padding:56px 24px 40px}
+section{margin-bottom:56px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(34px,6vw,52px);margin:0 0 6px;line-height:1.05}
+.sub{margin:0 0 24px;color:var(--muted)}
+ul.menu{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:48px}
+ul.menu li{display:flex;align-items:baseline;gap:10px;padding:12px 0;border-bottom:2px dotted var(--muted)}
+.n{font-weight:700;flex:1}
+.n small{display:block;font-weight:400;color:var(--muted);font-size:14.5px;line-height:1.4;margin-top:2px}
+.p{font-weight:700;color:var(--red);white-space:nowrap;font-variant-numeric:tabular-nums}
+.combo{background:var(--red);color:var(--on-red);border-radius:24px;padding:36px 28px}
+.combo .sub{color:#FFE3E6}
+.combo ul.menu li{border-bottom-color:#FFC6CC}
+.combo .n small{color:#FFE3E6}
+.combo .p{color:#fff}
+.note{font-size:15px;color:var(--muted);margin-top:16px}
+
+footer{background:var(--ink);color:var(--paper);padding:40px 24px;text-align:left}
+footer b{font-family:var(--display);font-weight:400;font-size:40px;display:block;line-height:1}
+@media (max-width:700px){
+  ul.menu{grid-template-columns:1fr}
+  .hero{padding:44px 20px 52px}
+  main{padding:40px 20px 24px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="awning" aria-hidden="true"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>drice</h1>
+    <p>Pastel crocante, recheio generoso, feito na hora.</p>
+    <a class="btn" href="#salgados">Ver cardápio</a>
+  </div>
+</header>
+
+<nav aria-label="Seções do cardápio">
+  <div class="wrap">
+    <a href="#salgados">Salgados</a>
+    <a href="#doces">Doces</a>
+    <a href="#bebidas">Bebidas</a>
+    <a href="#combos">Combos</a>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <section id="salgados">
+      <h2>Pastéis salgados</h2>
+      <p class="sub">Massa fina, frita no ponto e recheada até a borda.</p>
+      <ul class="menu" data-list="salgados"></ul>
+    </section>
+
+    <section id="doces">
+      <h2>Pastéis doces</h2>
+      <p class="sub">Para fechar a fome com um final doce.</p>
+      <ul class="menu" data-list="doces"></ul>
+    </section>
+
+    <section id="bebidas">
+      <h2>Bebidas</h2>
+      <p class="sub">Gelada é melhor com pastel quente.</p>
+      <ul class="menu" data-list="bebidas"></ul>
+    </section>
+
+    <section id="combos" class="combo">
+      <h2>Combos</h2>
+      <p class="sub">Mais sabor, preço melhor.</p>
+      <ul class="menu" data-list="combos"></ul>
+    </section>
+
+    <p class="note">Preços em reais (R$). Valores e sabores podem mudar sem aviso.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <b>drice</b>
+    <span>Pastelaria · feito na hora, todos os dias.</span>
+  </div>
+</footer>
+
+<script>
+const MENU = {
+  salgados: [
+    ['Carne','Carne moída temperada com azeitona e ovo',12],
+    ['Queijo','Muçarela derretida',11],
+    ['Pizza','Muçarela, presunto, tomate e orégano',13],
+    ['Frango com catupiry','Frango desfiado e catupiry cremoso',14],
+    ['Carne seca com queijo','Carne seca desfiada e muçarela',16],
+    ['Palmito','Palmito picado com queijo',14],
+    ['Calabresa','Calabresa acebolada e queijo',13],
+    ['Camarão','Camarão refogado com catupiry',19]
+  ],
+  doces: [
+    ['Banana com canela','Banana, açúcar e canela',11],
+    ['Romeu e Julieta','Queijo e goiabada',12],
+    ['Chocolate','Chocolate cremoso',12],
+    ['Doce de leite','Doce de leite com coco',11]
+  ],
+  bebidas: [
+    ['Caldo de cana 300 ml','Gelado, espremido na hora',7],
+    ['Caldo de cana 500 ml','Gelado, espremido na hora',10],
+    ['Suco natural','Laranja, limão ou maracujá',9],
+    ['Refrigerante lata','Consulte os sabores',6],
+    ['Água mineral','Com ou sem gás',4]
+  ],
+  combos: [
+    ['Pastel + caldo de cana','Qualquer pastel salgado + caldo 300 ml',17],
+    ['Dupla drice','2 pastéis salgados + refrigerante lata',28],
+    ['Mini pastéis','8 unidades de queijo ou carne',16],
+    ['Salgado + doce','1 pastel salgado + 1 doce',21]
+  ]
+};
+const brl = v => 'R$\u00A0' + v.toFixed(2).replace('.', ',');
+document.querySelectorAll('[data-list]').forEach(ul => {
+  ul.innerHTML = MENU[ul.dataset.list].map(([n, d, p]) =>
+    `<li><span class="n">${n}<small>${d}</small></span><span class="p">${brl(p)}</span></li>`
+  ).join('');
+});
+</script>
+</body>
+</html>
